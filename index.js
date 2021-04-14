@@ -12,6 +12,8 @@ const app = express();
 
 app.use(bodyparser.json());
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public', { maxAge: 31557600 }));
 
 app.use((req, res, next) => {
@@ -36,5 +38,5 @@ mongoose.connect(`mongodb+srv://${config.env.MONGO_USER}:${config.env.MONGO_PASS
     { useNewUrlParser: true, useUnifiedTopology: true }).then(() => { console.log('connected to db') }).catch(err => console.log(err));
 mongoose.Promise = global.Promise;
 
-const port = 3000 || process.env;
+const PORT = process.env.PORT || 3000;
 app.listen(port, () => console.log(`app listening at ${port}`))
