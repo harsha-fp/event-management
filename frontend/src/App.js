@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch, HashRouter } from 'react-router-dom';
 import AuthPage from './pages/Auth';
 import EventsPage from './pages/Events';
 import BookingsPage from './pages/Bookings';
@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <React.Fragment>
           <AuthContext.Provider
             value={{
@@ -58,7 +58,7 @@ class App extends Component {
             </main>
           </AuthContext.Provider>
         </React.Fragment>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 
