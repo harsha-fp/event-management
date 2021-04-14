@@ -39,4 +39,4 @@ mongoose.connect(`mongodb+srv://${config.env.MONGO_USER}:${config.env.MONGO_PASS
 mongoose.Promise = global.Promise;
 
 const PORT = process.env.PORT || 3000;
-app.listen(port, () => console.log(`app listening at ${port}`))
+app.listen(PORT, () => console.log(`app listening at ${port}`))
